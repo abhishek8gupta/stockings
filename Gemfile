@@ -1,5 +1,9 @@
 source "https://rubygems.org"
 
+gem 'x', '~> 0.15.0'
+
+gem 'open-weather-ruby-client'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -63,3 +67,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "x", "~> 0.15.0"
