@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem 'x', '~> 0.15.0'
 
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
 gem 'open-weather-ruby-client'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

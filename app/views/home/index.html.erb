@@ -1,14 +1,20 @@
-<h1>Stockings</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Weather</h1>
 
-<% x_client = TweetX::Client.new() %>
+<%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :cityname, params[:cityname]%>
+    <%= submit_tag "Lookup" %>
+<% end %>
 
-<%= x_client.get_weather('Milpitas') %>
+<% if @weatherObject.present? %>
 
+    <%= @weatherObject.weather[0].icon %>
+     <img src="http://openweathermap.org/img/wn/<%= @weatherObject.weather[0].icon %>@2x.png" alt="Weather Icon">
+     <%=@weatherObject.main.temp_max%>
+<% end %>
 
-
-
-
+<% if @error.present? %>
+    <%= @error %>
+<% end %>
 
 
 
