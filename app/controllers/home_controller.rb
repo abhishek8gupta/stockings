@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     client = OpenWeather::Client.new(
       api_key: '3e5f289c92a862485c6d5744519e168c'
