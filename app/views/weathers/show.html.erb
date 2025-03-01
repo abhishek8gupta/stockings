@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @weather %>
+<p>
+    <strong>City:</strong>
+    <%= @weather.city %>
+</p>
 
 <div>
   <%= link_to "Edit this weather", edit_weather_path(@weather) %> |

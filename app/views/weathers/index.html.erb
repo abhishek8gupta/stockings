@@ -1,16 +1,28 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Weathers" %>
 
 <h1>Weathers</h1>
-
-<div id="weathers">
-  <% @weathers.each do |weather| %>
-    <%= render weather %>
-    <p>
-      <%= link_to "Show this weather", weather %>
-    </p>
-  <% end %>
-</div>
-
+<br/>
 <%= link_to "New weather", new_weather_path %>
+<br/>
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @weathers.each do |weather| %>
+      <% if weather.user_id == current_user.id %>
+        <tr>
+          <td style="padding-right: 10px;"><%= weather.city %></td>
+          <td style="padding-right: 10px;"><%= link_to "Show", weather %></td>
+          <td style="padding-right: 10px;"><%= link_to "Edit", edit_weather_path(weather) %></td>
+          <td style="padding-right: 10px;"><%= link_to "Destroy", weather, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+

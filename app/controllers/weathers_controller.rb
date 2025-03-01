@@ -1,5 +1,12 @@
 class WeathersController < ApplicationController
   before_action :set_weather, only: %i[ show edit update destroy ]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+
+  def correct_user
+    @weather = current_user.weathers.find_by(id: params[:id])
+    redirect_to weathers_path, notice: "Not authorized to edit this weather" if @weather.nil?
+  end
 
   # GET /weathers or /weathers.json
   def index
