@@ -23,6 +23,10 @@ Things you may want to cover:
 
 * ...
 
+rails g scaffold weathers city:string user_id:integer:index
+rails db:migrate
+
+
 bearer token: AAAAAAAAAAAAAAAAAAAAAMhEzgEAAAAAIWpPUzVMNA7gvLZ9FC9iHpg299g%3DMw1nlM85ZCN9lhmTuFJ854ZhZHi2ZwPTaEnasD8pd9hMO2cP4J
 
 <% x_credentials = {
