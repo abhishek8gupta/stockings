@@ -6,7 +6,6 @@
 <% end %>
 
 <% if @weatherObject.present? %>
-
     <%= @weatherObject.weather[0].icon %>
      <img src="http://openweathermap.org/img/wn/<%= @weatherObject.weather[0].icon %>@2x.png" alt="Weather Icon">
      <%=@weatherObject.main.temp_max%>
