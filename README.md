@@ -23,6 +23,22 @@ Things you may want to cover:
 
 * ...
 
+# start server in local environment
+rails s
+rails server -b 0.0.0.0 -p 8000
+
+# start server in production environment
+rails s -e production
+
+# start server in development environment
+rails s -e development
+
+# start server in test environment
+rails s -e test
+
+
+
+
 rails g scaffold weathers city:string user_id:integer:index
 rails db:migrate
 
@@ -60,7 +76,15 @@ end
 
 # x_client.get("users/StephenCurry30")
 
+      <th>Feels Like(F)</th>
+      <th>Humidity(%)</th>
+      <th>Pressure(hPa)</th>
+      <th>Wind Speed(mph)</th>
 
+          <td style="padding-right: 10px;"><%= (((@weatherObject.main.feels_like - 273.15) * 9/5) + 32).round(2) %></td>
+          <td style="padding-right: 10px;"><%= @weatherObject.main.humidity %></td>
+          <td style="padding-right: 10px;"><%= @weatherObject.main.pressure %></td>
+          <td style="padding-right: 10px;"><%= @weatherObject.wind.speed %></td>
 
 #<OpenWeather::Models::City::Weather base="stations" 
 clouds=#<OpenWeather::Models::Clouds all=3> cod=200 

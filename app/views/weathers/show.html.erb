@@ -1,8 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
+<% client = OpenWeather::Client.new(api_key: '3e5f289c92a862485c6d5744519e168c') %>
+    <% if @weather.city == "" %>
+      <%= @nothing = "NA" %>
+    <% elsif @weather.city %>
+      <% @weatherObject = client.current_weather(city: "#{@weather.city}")  %>
+      <% if !@weatherObject.name %>
+        <% @error = "NA" %>
+      <% end %>
+    <% end %>
 <p>
-    <strong>City:</strong>
-    <%= @weather.city %>
+  <img src="<%= @weatherObject.weather[0].icon_uri %>" alt="Weather Icon">
+  <br/>
+  <strong>City:</strong>
+  <%= @weatherObject.name %>
+  <br/>
+  <strong>Temp(F):</strong>
+  <%= (((@weatherObject.main.temp - 273.15) * 9/5) + 32).round(2) %>
+  <br/>
+  <strong>Feels Like(F):</strong>
+  <%= (((@weatherObject.main.feels_like - 273.15) * 9/5) + 32).round(2) %>
+  <br/>
+  <strong>Humidity(%):</strong>
+  <%= @weatherObject.main.humidity %>
+  <br/>
+  <strong>Pressure(hPa):</strong>
+  <%= @weatherObject.main.pressure %>
+  <br/>
+  <strong>Wind Speed(mph):</strong>
+  <%= @weatherObject.wind.speed %>
+  <br/>
+  <strong>Description:</strong>
+  <%= @weatherObject.weather[0].description %>
+  <br/>
+  <strong>Current Time:</strong>
+  <%= Time.now.in_time_zone(@weatherObject.timezone).strftime("%Y-%m-%d %H:%M:%S %p") %>
+  <br/>
+  <strong>Sunrise:</strong>
+  <%= Time.at(@weatherObject.sys.sunrise).in_time_zone(@weatherObject.timezone).strftime("%Y-%m-%d %H:%M:%S %p") %>
+  <br/>
+  <strong>Sunset:</strong>
+  <%= Time.at(@weatherObject.sys.sunset).in_time_zone(@weatherObject.timezone).strftime("%Y-%m-%d %H:%M:%S %p") %>
 </p>
 
 <div>
