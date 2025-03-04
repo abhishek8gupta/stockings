@@ -40,6 +40,17 @@ rails s -e test
 bundle install --without production
 
 
+# heroku 
+heroku login
+heroku create
+heroku rename devstudiolive
+
+
+https://devstudiolive.herokuapp.com/
+https://git.heroku.com/devstudiolive.git 
+
+
+
 
 rails g scaffold weathers city:string user_id:integer:index
 rails db:migrate
