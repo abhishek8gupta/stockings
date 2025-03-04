@@ -36,6 +36,8 @@ rails s -e development
 # start server in test environment
 rails s -e test
 
+# install local gems 
+bundle install --without production
 
 
 
