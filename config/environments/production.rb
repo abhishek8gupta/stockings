@@ -90,6 +90,6 @@ Rails.application.configure do
 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.action_mailer.default_url_options = { host: 'devstudiolive.herokuapp.com/'}
+  config.action_mailer.default_url_options = { host: 'devstudiolive-a875e00b7d0f.herokuapp.com'}
 
 end

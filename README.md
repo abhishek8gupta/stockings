@@ -39,6 +39,18 @@ rails s -e test
 # install local gems 
 bundle install --without production
 
+# ruby env
+rbenv install -l
+rbenv install 3.2.7
+rbenv global 3.2.7
+
+## add in  ~/.zprofile
+---
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+---
+source .zprofile
+
 
 # heroku 
 heroku login
