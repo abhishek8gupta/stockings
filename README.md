@@ -40,6 +40,8 @@ rails s -e test
 bundle install --without production
 
 # ruby env
+https://dev.to/luizgadao/easy-way-to-change-ruby-version-in-mac-m1-m2-and-m3-16hl 
+
 rbenv install -l
 rbenv install 3.2.7
 rbenv global 3.2.7
@@ -60,6 +62,11 @@ heroku rename devstudiolive
 
 https://devstudiolive.herokuapp.com/
 https://git.heroku.com/devstudiolive.git 
+
+# heroku postgres 
+https://devcenter.heroku.com/articles/sqlite3
+
+
 
 
 
