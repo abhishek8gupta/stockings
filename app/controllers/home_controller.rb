@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-  def index
-    city = params[:cityname]
+
+  def find_weather(city)
+    # city = params[:cityname]
     if !city.present? || (city == "" || city.start_with?(" ") || city.end_with?(" "))
       @error = "Provide a correct city name with no leading or trailing spaces, please!"
     else 
@@ -14,5 +15,14 @@ class HomeController < ApplicationController
             @error = "City not found: #{city} or invalid city name"
         end
     end
+  end 
+
+  def index
+    find_weather(params[:cityname])
+  end
+
+  def search
+    @query = params[:query]
+    find_weather(@query)
   end
 end

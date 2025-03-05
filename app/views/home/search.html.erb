@@ -1,0 +1,34 @@
+<h1>Search Results for "<%= @query %>"</h1>
+
+
+<% if !@error.present? %>
+    <br/>
+    <br/>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4"><%= @weatherObject.name %><img src="<%= @weatherObject.weather[0].icon_uri %>" alt="Weather Icon"></h1>
+            <p class="lead">current condition - <%= @weatherObject.weather[0].description %></p>
+            <p class="lead">temperature <%= (((@weatherObject.main.temp - 273.15) * 9/5) + 32).round(2) %> F</p>
+            <p class="lead">feels like <%= (((@weatherObject.main.feels_like - 273.15) * 9/5) + 32).round(2) %> F</p>
+            <p class="lead">humidity <%= @weatherObject.main.humidity %>%</p>
+            <p class="lead">pressure <%= @weatherObject.main.pressure %> hPa</p>
+            <p class="lead">wind speed <%= @weatherObject.wind.speed %> mph</p>
+            <p class="lead">wind direction <%= @weatherObject.wind.deg %> degrees</p>
+            <p class="lead">wind speed <%= @weatherObject.wind.speed %> mph</p>
+            <p class="lead">wind direction <%= @weatherObject.wind.deg %> degrees</p>
+            <p class="lead">cloudiness <%= @weatherObject.clouds.all %>%</p>
+            <p class="lead">visibility <%= @weatherObject.visibility %> meters</p>
+            <p class="lead">sunrise <%= Time.at(@weatherObject.sys.sunrise).in_time_zone(@weatherObject.timezone).strftime("%Y-%m-%d %H:%M:%S %p") %></p>
+            <p class="lead">sunset <%= Time.at(@weatherObject.sys.sunset).in_time_zone(@weatherObject.timezone).strftime("%Y-%m-%d %H:%M:%S %p") %></p>
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <iframe src="https://maps.google.com/maps?q=<%= @weatherObject.coord.lat %>,<%= @weatherObject.coord.lon %>&z=15&output=embed" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        </div>
+        <p class="lead"> Longitude <%= @weatherObject.coord.lon %> degrees, Latitude <%= @weatherObject.coord.lat %> degrees</p>
+    </div>
+<% else %>
+  <p>No results found.</p>
+<% end %> 
