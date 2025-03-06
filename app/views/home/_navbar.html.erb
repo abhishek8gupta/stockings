@@ -12,6 +12,15 @@
         </li>
 
         <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Weather
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><%= link_to "Show Weather", weathers_path, class: "dropdown-item" %></a></li>
+              <li><%= link_to "Add Weather", new_weather_path, class: "dropdown-item" %></a></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <%= link_to "Log Out", destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" %>
           </li>
@@ -19,15 +28,6 @@
           <li class="nav-item">
             <%= link_to " Edit Profile", edit_user_registration_path, class: "nav-link" %>
           </li>
-
-          <li class="nav-item">
-            <%= link_to "Show Weather", weathers_path, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Add Weather", new_weather_path, class: "nav-link" %>
-          </li>
-
         <% else %>
           <li class="nav-item">
             <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
