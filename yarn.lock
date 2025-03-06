@@ -516,10 +516,10 @@ pify@^2.3.0:
   resolved "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
-popper.js@^2.0.0:
-  version "2.0.0-next.1"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-2.0.0-next.1.tgz#c37832b0010f96bbc6483c99de0e0295812d9476"
-  integrity sha512-xJ5uNGZ8XO9ypjCnxXbwpmo/ul1Dup9FdlYOzVpXpXW6cSa5BVj/RqqSLPAtLAodyWxqkfnytteOnLmcbOrKcw==
+popper.js@^2.0.0-next.1:
+  version "2.0.0-next.4"
+  resolved "https://registry.npmjs.org/popper.js/-/popper.js-2.0.0-next.4.tgz"
+  integrity sha512-rwX+OiRozGJyNzo+b39WE1yh1VE7+FuDAbMIP1j3hUQN4DP0WEOEbRlHC7dDgoIDpBQSm5rr+nCoPktbQCNhFQ==
 
 postcss-cli@^11.0.0:
   version "11.0.0"
